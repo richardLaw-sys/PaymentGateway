@@ -8,6 +8,7 @@ namespace BusinessObject.UIModel
     public class PaymentProcessRequestUIModel
     {
         [Required(AllowEmptyStrings = false)]
+        [RegularExpression("^4[0-9]{12}(?:[0-9]{3})?$", ErrorMessage = "Credit card number is not valid.")]
         public string CreditCardNumber { get; set; }
 
         [Required(AllowEmptyStrings = false)]
